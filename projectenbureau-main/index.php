@@ -29,9 +29,15 @@ $result = $conn->query($sql);
 <div class="projecten">
     <h2>Lopende Projecten</h2>
     <?php
+    $i =0;
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<p class='currproj'>" . $row["ProjectNaam"] . "</p>";
+            $out = "<p class='currproj";
+            if($i%2 == 0){
+                $out .= '-r';
+            }
+            $out .= "'>" . $row["ProjectNaam"] . "</p>";
+            echo $out;
         }
     } else {
         echo "0 results";
