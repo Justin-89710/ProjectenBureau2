@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <h1>Docenten Login</h1>
+    <img class="bg-img rotating" src="media/Cirkel.png" alt="">
 <!-- absic form met username en password -->
 <form method="post">
     <label for="username">Gebruikersnaam:</label>
