@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="14dece1e-20c3-41d0-944f-a6f387b1339a" name="GLR" url="http://89710.stu.sd-lab.nl/ProjectenBureu/projectenbureau-main">
+        <fileTransfer rootFolder="/httpdocs/ProjectenBureu/projectenbureau-main" host="web03.sd-lab.nl" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

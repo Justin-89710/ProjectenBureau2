@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $einddatum = $_POST['einddatum'];
     $status = $_POST['status'];
     $afbeelding = $_FILES['afbeelding']['name'];
+    $watwillen = $_POST['watwillen'];
 
     // Afbeelding uploaden naar media map
     move_uploaded_file($_FILES['afbeelding']['tmp_name'], 'media/' . $afbeelding);
@@ -39,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $php = isset($_POST['php']) ? 'BULL' : 'BEAR';
 
     // SQL-query om gegevens toe te voegen aan de database
-    $sql = "INSERT INTO Projecten (ProjectNaam, ProjectBeschrijving, HTML, CSS, JS, PHP, Startdatum, Einddatum, Status, Afbeelding) 
-            VALUES ('$projectnaam', '$beschrijving', '$html', '$css', '$js', '$php', '$startdatum', '$einddatum', '$status', '$afbeelding')";
+    $sql = "INSERT INTO Projecten (ProjectNaam, ProjectBeschrijving, HTML, CSS, JS, PHP, Startdatum, Einddatum, Status, Afbeelding, watwil) 
+            VALUES ('$projectnaam', '$beschrijving', '$html', '$css', '$js', '$php', '$startdatum', '$einddatum', '$status', '$afbeelding', '$watwillen')";
 
     if ($conn->query($sql) === TRUE) {
         echo '<div class="alert alert-success mt-3" role="alert">Project succesvol toegevoegd!</div>';
@@ -83,8 +84,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="checkbox" class="form-control" id="js" name="js" >
         </div>
         <div class="form-group">
-            <label for="beschrijving">Project Beschrijving:</label>
-            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" required></textarea>
+            <label for="beschrijving">over het project (max 100 worden):</label>
+            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" maxlength="100" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="beschrijving">Wat willen de project gevers? (max 100 worden):</label>
+            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" maxlength="100" required></textarea>
         </div>
         <div class="form-group">
             <label for="startdatum">Startdatum:</label>
