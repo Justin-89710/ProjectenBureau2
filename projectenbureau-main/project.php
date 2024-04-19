@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
         $einddatum = $row['Einddatum'];
         $status = $row['Status'];
         $afbeelding = $row['Afbeelding'];
+        $watwil = $row['watwil'];
     }
 }
 ?>
@@ -73,7 +74,7 @@ if ($result->num_rows > 0) {
     </div>
     <div class="section-1-right">
         <div class="section-1-title"><p>WAT WIL</p><p style="color: #0063af;"><?php echo $projectnaam; ?></p></div>
-        <p class="section-1-text"><?php echo $beschrijving; ?>
+        <p class="section-1-text"><?php echo $watwil; ?>
         </p>
     </div>
 </div>

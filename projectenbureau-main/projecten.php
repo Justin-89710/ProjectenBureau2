@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 
 //echo result
 if ($result->num_rows > 0) {
-    echo "<table class='table table-striped'><tr><th>ProjectNaam</th><th>ProjectBeschrijving</th><th>HTML</th><th>CSS</th><th>JS</th><th>PHP</th><th>Startdatum</th><th>Einddatum</th><th>Status</th><th>afbeelding</th><th>aanpassen</th><th>Verwijder</th></tr>";
+    echo "<table class='table table-striped'><tr><th>ProjectNaam</th><th>ProjectBeschrijving</th><th>HTML</th><th>CSS</th><th>JS</th><th>PHP</th><th>Startdatum</th><th>Einddatum</th><th>Status</th><th>afbeelding</th><th>aanpassen</th><th>Wat will?</th><th>Verwijder</th></tr>";
     while ($row = $result->fetch_assoc()) {
         // Convert "BULL" to "Ja" and anything else to "Nee"
         $html = ($row["HTML"] == "BULL") ? "Ja" : "Nee";
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         $js = ($row["JS"] == "BULL") ? "Ja" : "Nee";
         $php = ($row["PHP"] == "BULL") ? "Ja" : "Nee";
 
-        echo "<tr><td>" . $row["ProjectNaam"] . "</td><td>" . $row["ProjectBeschrijving"] . "</td><td>" . $html . "</td><td>" . $css . "</td><td>" . $js . "</td><td>" . $php . "</td><td>" . $row["Startdatum"] . "</td><td>" . $row["Einddatum"] . "</td><td>" . $row["Status"] . "</td><td><img src='media/" . $row["Afbeelding"] . "' > </td><td><a href='aanpassen.php?id=" . $row["ProjectNaam"] . "'><button>aanpassen</button></a></td><td><a href='verwijder.php?id=" . $row["ProjectNaam"] . "'><button>verwijderen</button></a></td></tr>";
+        echo "<tr><td>" . $row["ProjectNaam"] . "</td><td>" . $row["ProjectBeschrijving"] . "</td><td>" . $html . "</td><td>" . $css . "</td><td>" . $js . "</td><td>" . $php . "</td><td>" . $row["Startdatum"] . "</td><td>" . $row["Einddatum"] . "</td><td>" . $row["Status"] . "</td><td><img src='media/" . $row["Afbeelding"] . "' ></td><td>" . $row["watwil"] . "</td><td><a href='aanpassen.php?id=" . $row["ProjectNaam"] . "'><button>aanpassen</button></a></td><td><a href='verwijder.php?id=" . $row["ProjectNaam"] . "'><button>verwijderen</button></a></td></tr>";
     }
     echo "</table>";
 } else {

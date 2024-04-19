@@ -1,8 +1,8 @@
 <?php
- //Start de sessie
+//Start de sessie
 session_start();
 
- //Controleer of de gebruiker is ingelogd en een @glr-account heeft
+//Controleer of de gebruiker is ingelogd en een @glr-account heeft
 if (!isset($_SESSION['loggedin']) || !isset($_SESSION['email']) || strpos($_SESSION['email'], '@glr') === false) {
     header('Location: docenten_login.php');
     exit();
@@ -84,12 +84,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="checkbox" class="form-control" id="js" name="js" >
         </div>
         <div class="form-group">
-            <label for="beschrijving">over het project (max 100 worden):</label>
-            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" maxlength="100" required></textarea>
+            <label for="beschrijving">over het project (max 674 tekens):</label>
+            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" maxlength="674" required></textarea>
         </div>
         <div class="form-group">
-            <label for="beschrijving">Wat willen de project gevers? (max 100 worden):</label>
-            <textarea class="form-control" id="beschrijving" name="beschrijving" rows="3" maxlength="100" required></textarea>
+            <label for="beschrijving">Wat willen de project gevers? (max 674 tekens):</label>
+            <textarea class="form-control" id="beschrijving" name="watwillen" rows="3" maxlength="674" required></textarea>
         </div>
         <div class="form-group">
             <label for="startdatum">Startdatum:</label>
