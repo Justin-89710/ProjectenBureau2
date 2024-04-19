@@ -1,0 +1,347 @@
+@font-face {
+    font-family: jockeyone;
+    src: url(../fonts/JockeyOne-Regular.ttf);
+  }
+
+* {
+    font-family: jockeyone;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+head {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6vw;
+    padding: 10px;
+}
+
+.title {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    color: white;
+    font-size: 8rem;
+    width: 60%;
+}
+
+.title-2 {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: white;
+    font-size: 8rem;
+    width: 60%;
+}
+
+.title-3 {
+    position: absolute;
+    top: 30%;
+    left: 6%;
+    color: white;
+    font-size: 5rem;
+    width: 40%;
+}
+.head-bg-img {
+   width: 100vw;
+}
+
+.skills {
+    background-color: black;
+    width: 12%;
+    position: absolute;
+    top: 27vw;
+    height: fit-content;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    left: 63vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    font-size: 1.6rem;
+    min-width: fit-content;
+}
+
+.skills-title {
+    font-size: 3rem;
+}
+.cirkel {
+    width: 10px;
+    height: 10px;
+    background-color: #5C7BBA;
+    border-radius: 50%;
+    position: absolute;
+}
+.cirkel-1 {
+    top: 48%;
+    left: 10%;
+}
+.cirkel-2 {
+    top: 60%;
+    left: 10%;
+}
+.cirkel-3 {
+    top: 72%;
+    left: 10%;
+}
+.hero {
+    margin-left: 15rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    display: flex;
+    width: 50%;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+.hero-title-2 {
+    display: flex;
+    font-size: 3rem;
+    gap: 1rem;
+    width: 50%;
+    margin-top: 5rem;
+}
+.hero-text {
+    width: 50%;
+    display: flex;
+    font-size: 1.8rem;
+}
+
+.section-1 {
+    display: flex;
+    margin: 10rem;
+    margin-right: 15rem;
+    margin-left: 15rem;
+    gap: 5rem;
+}
+
+
+
+.section-1-left-bg {
+    background-color: #5C7BBA;
+    padding: 2rem;
+}
+.section-1-left-bg img {
+    width: 100%;
+}
+
+.section-1-title {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 3rem;
+    flex-wrap: wrap;
+}
+.section-1-text {
+    font-size: 1.8rem;
+}
+
+.blue-line {
+    border: 3px solid #5C7BBA;
+    border-radius: 30px;
+    width: 50%;
+}
+
+.sign-up-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 2.3rem;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sign-up-form button {
+    background-color: #5C7BBA;
+    border: none;
+    color: white;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all .2s;
+}
+
+form {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 20%;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.sign-up-form input, textarea {
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid black;
+    resize: none;
+    width: 90%;
+}
+.sign-up-form input::placeholder, textarea::placeholder {
+    font-size: 1.6rem;
+}
+.sign-up-form input, textarea:focus {
+    outline: none;
+}
+
+.submit-button:hover {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+}
+
+footer {
+    background-color: #5C7BBA;
+    width: 100vw;
+    height: 10rem;
+}
+
+
+@media only screen and (max-width: 1450px) {
+    .logo {
+        display: none;
+    }
+    .title {
+       top: 7%;
+       left: 10%;
+       font-size: 5rem;
+    }
+    .title-2 {
+        font-size: 5rem;
+    }
+    .title-3 {
+        font-size: 3rem;
+        top: 10%;
+        left: 0;
+        width: 70%;
+
+    }
+    form {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    form {
+        margin-top: 2rem;
+        width: 80%;
+    }
+    body {
+        text-align: center;
+    }
+    .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: auto;
+    }
+    .hero-title {
+        gap: .5rem;
+    }
+    .hero-title-2 {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+    }
+
+    .title {
+        position: absolute;
+        top: 8%;
+        left: 6%;
+        color: white;
+        font-size: 5rem;
+    }
+
+    .title-2 {
+        text-align: left;
+        top: 10%;
+        font-size: 2rem;
+    }
+    
+    .head-bg-img {
+        width: 150vw;
+    }
+    .skills {
+        display: none;
+    }
+    .section-1 {
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin: 5%;
+    }
+
+    .section-1-text {
+        font-size: 1.2rem;
+    }
+
+    .section-1-title {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-text {
+        width: 80%;
+    }
+}  
+
+@media only screen and (max-width: 600px) {
+  
+    .section-1 {
+        flex-wrap: wrap;
+    }
+
+    .hero-title {
+        width: 80%;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .hero-text {
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    .section-1-title {
+        display: flex;
+        flex-direction: row;
+        gap: .3rem;
+        font-size: 2rem;
+    }
+    .sign-up-title {
+        font-size: 1.5rem;
+    }
+
+    .naam, .email {
+        font-size: 1.4rem;
+    }
+}  
+
+

@@ -1,0 +1,230 @@
+@media only screen and (max-width: 1700px) {
+  .project {
+    width: auto;
+  }
+
+  .project2 {
+    width: auto;
+  }
+
+  .project3 {
+    width: auto;
+  }
+
+  .project4 {
+    width: auto;
+  }
+
+  .projectinfo {
+    width: 29vw;
+  }
+
+  .projectimg {
+    margin-left: 21rem;
+  }
+
+  .projectbtn {
+    margin-left: 7rem;
+  }
+
+  .projectkennis {
+    margin-left: 30vw;
+  }
+}
+
+@media only screen and (max-width: 1410px) {
+  .projectinfo {
+    width: 70vw;
+  }
+
+  .project2 {
+    float: left;
+    margin-left: 3rem;
+  }
+
+  .project4 {
+    float: left;
+    margin-left: 3rem;
+  }
+
+  .projectimg {
+    margin-left: 70vw;
+  }
+
+  .projectkennis {
+    margin-left: 70vw;
+  }
+
+  .block1, .block2, .block3, .block4 {
+    margin-left: 4vw;
+  }
+
+  .projectbtn {
+    margin-left: 25%;
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .projectimg {
+    margin-left: 65vw;
+  }
+  .block1, .block2, .block3, .block4 {
+    margin-left: 3vw;
+  }
+}
+@media only screen and (max-width: 1200px) {
+.block1, .block2, .block3, .block4 {
+    margin-left: 3vw;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .projectimg {
+    margin-left: 50vw;
+  }
+
+  .project,
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    margin-left: 2vw;
+  }
+
+  .projectinfo {
+    width: 50vw;
+  }
+
+  .projectkennis {
+    margin-left: 30rem;
+  }
+
+  .block1, .block2, .block3, .block4 {
+    margin-left: 2vw;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  nav {
+display: none;
+  }
+
+  .phone {
+    display: block;
+  }
+
+  .logo {
+    width: 10vw;
+  }
+  
+    .hero {
+    height: 25rem;
+  }
+
+  .elements {
+    margin-top: -5rem;
+  }
+
+  .element1 {
+    margin-left: -100px;
+    width: 60vw;
+    font-size: 1.3rem;
+    height: 50px;
+  }
+
+  .element2 {
+    width: 60vw;
+    height: 30px;
+    margin-top: -2rem;
+  }
+
+  .element3 {
+    width: 34vw;
+    height: 35px;
+    margin-left: 30vw;
+    line-height: 15px;
+    margin-top: 2.8rem;
+    font-size: 1rem;
+  }
+
+  .projecttitel {
+    width: 30vw;
+    font-size: 1rem;
+    line-height: 15px;
+    height: 50px;
+  }
+
+  .projectinfo {
+    font-size: 0.8rem;
+    margin-left: -30px;
+  }
+
+  .projectimg {
+    margin-left: 50vw;
+  }
+
+  .projectimg img {
+    width: 40vw;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
+
+  .cirkel {
+    width: 350px;
+    top: 3rem;
+  }
+
+  .projectbtn {
+    font-size: 12px;
+    width: 120px;
+    margin-left: 15vw;
+    height: 35px;
+  }
+
+  .projectkennis {
+    margin-left: 50vw;
+  }
+
+  .block1 img,
+  .block2 img,
+  .block3 img {
+    width: 20px;
+  }
+
+  .block4 img {
+    width: 30px;
+  }
+
+  .block1 {
+    margin-left: 3rem;
+    margin-top: -2rem;
+  }
+ .block2 {
+    margin-left: 1rem;
+    margin-top: -3.5rem;
+  }
+
+   .block3 { 
+        margin-left: 1rem;
+    margin-top: 1rem;
+   }
+
+   .block4 {
+    margin-left: -1rem;
+}
+
+.project, .project1 {
+    height: auto;
+}
+
+.project2, .project3, .project4 {
+     height: auto;
+     margin-bottom: 100px;
+}
+}
+
+@media only screen and (max-width: 420px) {
+.projectkennis {
+    margin-left: 45vw;
+  }
+}

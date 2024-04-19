@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>project toevoeg form</title>
+</head>
+<body>
+    <form action="../../PHP/toevoegen.php" method="post" enctype="multipart/form-data">
+        <label for="projectnaam">Projectnaam:</label>
+        <input type="text" id="projectnaam" name="projectnaam" required>
+        <br>
+        <label for="projectomschrijving">Projectomschrijving:</label>
+        <input type="text" id="projectomschrijving" name="projectomschrijving" required>
+        <br>
+        <label for="projecteinddatum">Projecteinddatum:</label>
+        <input type="date" id="projecteinddatum" name="projecteinddatum" required>
+        <br>
+        <label for="projectstatus">Projectstatus:</label>
+        <input type="text" id="projectstatus" name="projectstatus" required>
+        <br>
+        <label for="html">HTML</label>
+        <input type="checkbox" id="html" name="html" value="1">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="css" name="css" value="1">
+        <label for="js">JS</label>
+        <input type="checkbox" id="js" name="js" value="1">
+        <label for="php">PHP</label>
+        <input type="checkbox" id="php" name="php" value="1">
+        <br>
+        <input type="file" name="afbeelding" id="afbeelding">
+        <br>
+        <input type="submit" value="Toevoegen">
+    </form>
+</body>
+</html>

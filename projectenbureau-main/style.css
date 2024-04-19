@@ -1,0 +1,333 @@
+@font-face {
+    font-family: jockeyone;
+    src: url(fonts/JockeyOne-Regular.ttf);
+  }
+
+:root {
+    --blue: #5C7BBA;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1920px;
+    font-family: jockeyone;
+    background-color: black;
+}
+.container {
+    width: 1080px;
+    height: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.blue-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.white-bg {
+    position: absolute;
+    bottom: 25rem;
+    right: 0;
+}
+header {
+    display: flex;
+}
+.head-logo-text {
+    display: flex;
+    background-color: var(--blue);
+    color: white;
+    padding: 1rem;
+    width: 53%;
+    height: fit-content;
+    border-bottom-right-radius: 8rem;
+}
+.head-logo-text h1{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  letter-spacing: .1rem;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.vormen {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    padding: 2rem;
+}
+.vormen img {
+    right: 0;
+}
+.pijl {
+    position: absolute;
+    left: -8rem;
+    top: 30rem;
+    width: 40rem;
+}
+.hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    position: absolute;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 1rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    top: 26.8rem;
+    left: 13rem;
+    display: flex;
+    width: 500px;
+    height: 72px;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 999;
+}
+
+.hero-title p {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.hero-time {
+    position: absolute;
+    top: 29.5rem;
+    width: 480px;
+    height: 123px;
+    flex-shrink: 0;
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+}
+.hero-time p {
+    color: #FFF;
+    font-family: jockeyone;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 4.5rem;
+    margin-left: 1.5rem;
+}
+.hero-vak {
+    display: flex;
+    width: 197px;
+    height: 56px;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--blue);
+    left: 36rem;
+    top: 35.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+.hero-vak p {
+    color: #FFF;
+    text-align: center;
+    font-family: jockeyone;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@-webkit-keyframes rotating {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 50s linear infinite;
+    -moz-animation: rotating 50s linear infinite;
+    -ms-animation: rotating 50s linear infinite;
+    -o-animation: rotating 50s linear infinite;
+    animation: rotating 50s linear infinite;
+  }
+.verwachtingen {
+    margin-left: 4rem;
+}
+  .verwachtingen-title {
+    position: absolute;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 1rem;
+    letter-spacing: .1rem;
+    display: flex;
+    width: 300px;
+    height: 72px;
+    flex-direction: column;
+    justify-content: center;
+    top: 47rem;
+    z-index: 5;
+}
+
+.verwachtingen-title p {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.verwachtingen-text-box {
+    background-color: white;
+    position: relative;
+    border-radius: 2rem;
+    border: 2px solid var(--blue);
+    width: 500px;
+    height: 220px;
+    left: 4rem;
+    padding: 1rem;
+}
+
+.verwachtingen-text-box p {
+    font-size: 1.3rem;
+}
+
+.verwachtingen img {
+    position: absolute;
+    width: 20rem;
+    left: 30rem;
+    top: 62rem;
+}
+
+.ervaringen-title {
+    position: absolute;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 1rem;
+    letter-spacing: .1rem;
+    display: flex;
+    width: 170px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    top: 80rem;
+    z-index: 5;
+    left: 1rem;
+}
+.ervaringen-title p {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.ervaringen-list {
+    position: absolute;
+    top: 82rem;
+    left: 3rem;
+    gap: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 1rem;
+    width: 1000px;
+    height: 130px;
+    background-color: white;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
+}
+
+.ervaringen-list div {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.ervaringen-html {
+    width: 71px;
+}
+.ervaringen-css {
+    width: 50px;
+}
+.ervaringen-js {
+    width: 114px;
+}
+.ervaringen-php {
+    width: 106px;
+}
+
+.qr {
+    position: absolute;
+    right: 3rem;
+    top: 100rem;
+}
+
+.qr-block {
+    background-color: white;
+    border-radius: 1rem;
+    width: 17rem;
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qr-block img {
+    width: 15rem;
+}
+
+.qr-title {
+    position: absolute;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    letter-spacing: .1rem;
+    display: flex;
+    width: 170px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    top: -2.5rem;
+    z-index: 5;
+    left: -4rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+
+}
+
+.qr-title p {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
