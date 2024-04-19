@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 <div class="projecten">
     <h2>Lopende Projecten</h2>
     <?php
-    $i =0;
+    $i = 0;
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $out = "<p class='currproj";

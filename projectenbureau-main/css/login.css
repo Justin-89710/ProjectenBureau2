@@ -1,0 +1,68 @@
+@font-face {
+    font-family: jockeyone;
+    src: url(../fonts/JockeyOne-Regular.ttf);
+  }
+
+  :root {
+    --blue: #5C7BBA;
+  }
+
+* {
+    font-family: jockeyone;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: jockeyone;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: var(--blue);
+    padding: 2rem;
+    border-radius: 2rem;
+    color: white;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+form input {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.2rem;
+    padding: .2rem  ;
+
+}
+
+form input[type=submit]{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    background-color: transparent;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+form input[type=submit]:hover {
+    cursor: pointer;
+}
