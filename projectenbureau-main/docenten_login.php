@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $username;
         echo "Login successful";
-        header("Location: projectentoevoegen.php");
+        header("Location: projecten.php");
     } else {
         echo "Login failed";
     }

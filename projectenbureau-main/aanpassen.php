@@ -83,6 +83,13 @@ if (isset($_POST["status"])) {
     $conn->query($sql);
 }
 
+// post watwil
+if (isset($_POST["watwil"])) {
+    $watwil = $_POST["watwil"];
+    $sql = "UPDATE Projecten SET watwil = '$watwil' WHERE ProjectNaam = '$projectNaam'";
+    $conn->query($sql);
+}
+
 // get info from database
 $sql = "SELECT * FROM Projecten WHERE ProjectNaam = '$projectNaam'";
 
@@ -106,6 +113,14 @@ if ($result->num_rows > 0) {
         echo "<label for='projectbeschrijving'>Project Beschrijving:</label>";
         echo "<textarea class='form-control' id='projectbeschrijving' name='projectbeschrijving' rows='3' required>" . $row["ProjectBeschrijving"] . "</textarea>";
         echo "<button type='submit' name='beschrijving' class='btn btn-primary mt-3'>Opslaan</button>";
+        echo "</div>";
+        echo "</form>";
+        echo "<form method='post'>";
+        echo "<input type='hidden' name='projectbeschrijving' value='" . $row["ProjectBeschrijving"] . "'>";
+        echo "<div class='form-group'>";
+        echo "<label for='projectbeschrijving'>Wat willen de project gevers:</label>";
+        echo "<textarea class='form-control' id='projectbeschrijving' name='watwil' rows='3' required>" . $row["watwil"] . "</textarea>";
+        echo "<button type='submit' name='watwil' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
         echo "</form>";
         //form for html
@@ -199,7 +214,7 @@ if ($result->num_rows > 0) {
         echo "<button type='submit' name='status' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
         echo "</form>";
-        
+
         echo 'html = ' . $row["HTML"];
         echo 'css = ' . $row["CSS"];
         echo 'js = ' . $row["JS"];
