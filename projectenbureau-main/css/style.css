@@ -37,17 +37,17 @@ nav {
 }
 
 .about {
-  width: 50rem;
+  width: 60%;
   padding: 20px;
   margin-left: 40px;
 }
 
 .about h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .about p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .about h2::before {
@@ -258,6 +258,20 @@ color: var(--blue);
 }
 
 @media only screen and (max-width: 1200px) {
+
+  .about {
+    width: 85vw;
+
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+
+  }
+  .about p {
+    font-size: 1.1rem;
+  }
+
   .bg {
     height: 36vw;
   }

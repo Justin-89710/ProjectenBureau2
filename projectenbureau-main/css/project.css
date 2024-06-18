@@ -31,7 +31,7 @@ head {
     top: 25%;
     left: 5%;
     color: white;
-    font-size: 8rem;
+    font-size: 4rem;
     width: 60%;
 }
 
@@ -210,12 +210,6 @@ form {
     padding-right: 1.1rem;
 }
 
-footer {
-    background-color: #5C7BBA;
-    width: 100vw;
-    height: 10rem;
-}
-
 
 @media only screen and (max-width: 1450px) {
     .logo {
@@ -224,7 +218,7 @@ footer {
     .title {
        top: 7%;
        left: 10%;
-       font-size: 5rem;
+       font-size: 3rem;
     }
     .title-2 {
         font-size: 5rem;
@@ -270,7 +264,7 @@ footer {
         top: 8%;
         left: 6%;
         color: white;
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     .title-2 {

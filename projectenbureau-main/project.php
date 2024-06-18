@@ -112,16 +112,6 @@ if ($result->num_rows > 0) {
         </form>
     </div>
 </center>
-
-
-<footer>
-    <div class="footer-left">
-
-    </div>
-    <div class="footer-right">
-
-    </div>
-</footer>
 </body>
 </html>
 
