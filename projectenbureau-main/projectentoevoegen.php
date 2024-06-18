@@ -39,9 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Controleren of de PHP checkbox is aangevinkt
     $php = isset($_POST['php']) ? 'BULL' : 'BEAR';
 
+    // Controleren of de overige checkbox is aangevinkt
+    $over = isset($_POST['over']) ? 'BULL' : 'BEAR';
+
+    //make qr code
+    $qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://project.sd-lab.nl/project.php?id=".$projectnaam;
+    //save qr code into media
+    file_put_contents("media/".$projectnaam.".png", file_get_contents($qr));
+    //save path to qr code
+    $qr = "media/".$projectnaam.".png";
+
     // SQL-query om gegevens toe te voegen aan de database
-    $sql = "INSERT INTO Projecten (ProjectNaam, ProjectBeschrijving, HTML, CSS, JS, PHP, Startdatum, Einddatum, Status, Afbeelding, watwil) 
-            VALUES ('$projectnaam', '$beschrijving', '$html', '$css', '$js', '$php', '$startdatum', '$einddatum', '$status', '$afbeelding', '$watwillen')";
+    $sql = "INSERT INTO Projecten (ProjectNaam, ProjectBeschrijving, HTML, CSS, JS, PHP, overeg, Startdatum, Einddatum, Status, Afbeelding, watwil, QR) 
+            VALUES ('$projectnaam', '$beschrijving', '$html', '$css', '$js', '$php', '$over', '$startdatum', '$einddatum', '$status', '$afbeelding', '$watwillen', '$qr')";
 
     if ($conn->query($sql) === TRUE) {
         echo '<div class="alert alert-success mt-3" role="alert">Project succesvol toegevoegd!</div>';
@@ -61,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="container mt-5">
+    <a href="projecten.php" class="btn btn-primary">Terug naar projecten</a>
     <h2 class="mb-4">Project Toevoegen</h2>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
         <div class="form-group">
@@ -82,6 +93,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form-group">
             <label for="js">JS:</label>
             <input type="checkbox" class="form-control" id="js" name="js" >
+        </div>
+        <div class="form-group">
+            <label for="over">(geen van bovenstaande):</label>
+            <input type="checkbox" class="form-control" id="over" name="over" >
         </div>
         <div class="form-group">
             <label for="beschrijving">over het project (max 674 tekens):</label>

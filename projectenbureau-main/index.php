@@ -1,4 +1,8 @@
 <?php
+//show server errors
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 //connect to the database
 require_once "connection.php";
 global $conn;
