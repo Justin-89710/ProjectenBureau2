@@ -106,6 +106,7 @@ if ($result->num_rows > 0) {
         echo "<tr><td>" . $row["ProjectNaam"] . "</td><td>" . $row["ProjectBeschrijving"] . "</td><td>" . $html . "</td><td>" . $css . "</td><td>" . $js . "</td><td>" . $php . "</td><td>" . $over . "</td><td>" . $row["Startdatum"] . "</td><td>" . $row["Einddatum"] . "</td><td>" . $row["Status"] . "</td><td><img src='media/" . $row["Afbeelding"] . "' ></td><td>" . $row["watwil"] . "</td><td><img src='" . $row["QR"] . "' alt='gfd'></td><td><a href='aanpassen.php?id=" . $row["ProjectNaam"] . "'><button>aanpassen</button></a></td><td><a href='verwijder.php?id=" . $row["ProjectNaam"] . "'><button>verwijderen</button></a></td></tr>";
     }
     echo "</table>";
+    echo "<a href='projectentoevoegen.php'><button class='btn btn-primary mt-3'>voeg een project toe!</button></a>";
 } else {
     echo "0 results";
 }
@@ -127,6 +128,5 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-<a href='projectentoevoegen.php'><button class='btn btn-primary mt-3'>voeg een project toe!</button></a>
 </body>
 </html>

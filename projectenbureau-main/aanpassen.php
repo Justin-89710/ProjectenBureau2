@@ -158,8 +158,8 @@ if ($result->num_rows > 0) {
         echo "<div class='form-group'>";
         echo "<label for='html'>HTML:</label>";
         echo "<select class='form-control' id='html' name='html'>";
-        echo "<option value='BULL' " . ($row["HTML"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
-        echo "<option value='BEAR' " . ($row["HTML"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "<option value='BULL' " . ($row["HTML"] == 'BULL' ? 'selected' : '') . ">Ja</option>";
+        echo "<option value='BEAR' " . ($row["HTML"] == 'BEAR' ? 'selected' : '') . ">Nee</option>";
         echo "</select>";
         echo "</div>";
 
@@ -167,8 +167,8 @@ if ($result->num_rows > 0) {
         echo "<div class='form-group'>";
         echo "<label for='css'>CSS:</label>";
         echo "<select class='form-control' id='css' name='css'>";
-        echo "<option value='BULL' " . ($row["CSS"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
-        echo "<option value='BEAR' " . ($row["CSS"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "<option value='BULL' " . ($row["CSS"] == 'BULL' ? 'selected' : '') . ">Ja</option>";
+        echo "<option value='BEAR' " . ($row["CSS"] == 'BEAR' ? 'selected' : '') . ">Nee</option>";
         echo "</select>";
         echo "</div>";
 
@@ -176,8 +176,8 @@ if ($result->num_rows > 0) {
         echo "<div class='form-group'>";
         echo "<label for='js'>JS:</label>";
         echo "<select class='form-control' id='js' name='js'>";
-        echo "<option value='BULL' " . ($row["JS"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
-        echo "<option value='BEAR' " . ($row["JS"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "<option value='BULL' " . ($row["JS"] == 'BULL' ? 'selected' : '') . ">Ja</option>";
+        echo "<option value='BEAR' " . ($row["JS"] == 'BEAR' ? 'selected' : '') . ">Nee</option>";
         echo "</select>";
         echo "</div>";
 
@@ -185,8 +185,8 @@ if ($result->num_rows > 0) {
         echo "<div class='form-group'>";
         echo "<label for='php'>PHP:</label>";
         echo "<select class='form-control' id='php' name='php'>";
-        echo "<option value='BULL' " . ($row["PHP"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
-        echo "<option value='BEAR' " . ($row["PHP"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "<option value='BULL' " . ($row["PHP"] == 'BULL' ? 'selected' : '') . ">Ja</option>";
+        echo "<option value='BEAR' " . ($row["PHP"] == 'BEAR' ? 'selected' : '') . ">Nee</option>";
         echo "</select>";
         echo "</div>";
 
@@ -194,8 +194,8 @@ if ($result->num_rows > 0) {
         echo "<div class='form-group'>";
         echo "<label for='overige'>Overige:</label>";
         echo "<select class='form-control' id='overige' name='overige'>";
-        echo "<option value='BULL' " . ($row["overige"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
-        echo "<option value='BEAR' " . ($row["overige"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "<option value='BULL' " . ($row["overige"] == 'BULL' ? 'selected' : '') . ">Ja</option>";
+        echo "<option value='BEAR' " . ($row["overige"] == 'BEAR' ? 'selected' : '') . ">Nee</option>";
         echo "</select>";
         echo "</div>";
 
