@@ -1,4 +1,8 @@
 <?php
+// server errors
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // get info from database
 require_once "connection.php";
 global $conn;
@@ -6,224 +10,225 @@ global $conn;
 // get name from url
 $projectNaam = $_GET["id"];
 
-// post name
-if (isset($_POST["naam"])) {
-    $projectnaam = $_POST["projectnaam"];
-    $sql = "UPDATE Projecten SET ProjectNaam = '$projectnaam' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post beschrijving
-if (isset($_POST["beschrijving"])) {
-    $beschrijving = $_POST["projectbeschrijving"];
-    $sql = "UPDATE Projecten SET ProjectBeschrijving = '$beschrijving' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post html
-if (isset($_POST["htmlbull"])) {
-    $html = "BULL";
-    $sql = "UPDATE Projecten SET HTML = '$html' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-if (isset($_POST["htmlbear"])) {
-    $html = "BEAR";
-    $sql = "UPDATE Projecten SET HTML = '$html' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post css
-if (isset($_POST["cssbull"])) {
-    $css = "BULL";
-    $sql = "UPDATE Projecten SET CSS = '$css' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-if (isset($_POST["cssbear"])) {
-    $css = "BEAR";
-    $sql = "UPDATE Projecten SET CSS = '$css' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post js
-if (isset($_POST["jsbull"])) {
-    $js = "BULL";
-    $sql = "UPDATE Projecten SET JS = '$js' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-if (isset($_POST["jsbear"])) {
-    $js = "BEAR";
-    $sql = "UPDATE Projecten SET JS = '$js' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post php
-if (isset($_POST["phpbull"])) {
-    $php = "BULL";
-    $sql = "UPDATE Projecten SET PHP = '$php' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-if (isset($_POST["phpbear"])) {
-    $php = "BEAR";
-    $sql = "UPDATE Projecten SET PHP = '$php' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
+// handle form submissions
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // update project name
+    if (isset($_POST["projectnaam"])) {
+        $projectnaam = $_POST["projectnaam"];
+        $stmt = $conn->prepare("UPDATE Projecten SET ProjectNaam = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $projectnaam, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update project description
+    if (isset($_POST["projectbeschrijving"])) {
+        $beschrijving = $_POST["projectbeschrijving"];
+        $stmt = $conn->prepare("UPDATE Projecten SET ProjectBeschrijving = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $beschrijving, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update watwil
+    if (isset($_POST["watwil"])) {
+        $watwil = $_POST["watwil"];
+        $stmt = $conn->prepare("UPDATE Projecten SET watwil = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $watwil, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update HTML
+    if (isset($_POST["html"])) {
+        $html = ($_POST["html"] == 'BULL') ? 'BULL' : 'BEAR';
+        $stmt = $conn->prepare("UPDATE Projecten SET HTML = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $html, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update CSS
+    if (isset($_POST["css"])) {
+        $css = ($_POST["css"] == 'BULL') ? 'BULL' : 'BEAR';
+        $stmt = $conn->prepare("UPDATE Projecten SET CSS = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $css, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update JS
+    if (isset($_POST["js"])) {
+        $js = ($_POST["js"] == 'BULL') ? 'BULL' : 'BEAR';
+        $stmt = $conn->prepare("UPDATE Projecten SET JS = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $js, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update PHP
+    if (isset($_POST["php"])) {
+        $php = ($_POST["php"] == 'BULL') ? 'BULL' : 'BEAR';
+        $stmt = $conn->prepare("UPDATE Projecten SET PHP = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $php, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update startdatum
+    if (isset($_POST["startdatum"])) {
+        $startdatum = $_POST["startdatum"];
+        $stmt = $conn->prepare("UPDATE Projecten SET Startdatum = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $startdatum, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update einddatum
+    if (isset($_POST["einddatum"])) {
+        $einddatum = $_POST["einddatum"];
+        $stmt = $conn->prepare("UPDATE Projecten SET Einddatum = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $einddatum, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update status
+    if (isset($_POST["status"])) {
+        $status = $_POST["status"];
+        $stmt = $conn->prepare("UPDATE Projecten SET Status = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $status, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+    // update overige (BULL or BEAR)
+    if (isset($_POST["overige"])) {
+        $overige = ($_POST["overige"] == 'BULL') ? 'BULL' : 'BEAR';
+        $stmt = $conn->prepare("UPDATE Projecten SET overeg = ? WHERE ProjectNaam = ?");
+        $stmt->bind_param("ss", $overige, $projectNaam);
+        if (!$stmt->execute()) {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
 }
 
+// fetch project details from database
+$sql = "SELECT * FROM Projecten WHERE ProjectNaam = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $projectNaam);
+$stmt->execute();
+$result = $stmt->get_result();
 
-// post startdatum
-if (isset($_POST["start"])) {
-    $startdatum = $_POST["startdatum"];
-    $sql = "UPDATE Projecten SET Startdatum = '$startdatum' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post einddatum
-if (isset($_POST["eind"])) {
-    $einddatum = $_POST["einddatum"];
-    $sql = "UPDATE Projecten SET Einddatum = '$einddatum' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-// post status
-if (isset($_POST["status"])) {
-    $status = $_POST["status"];
-    $sql = "UPDATE Projecten SET Status = '$status' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-
-// post watwil
-if (isset($_POST["watwil"])) {
-    $watwil = $_POST["watwil"];
-    $sql = "UPDATE Projecten SET watwil = '$watwil' WHERE ProjectNaam = '$projectNaam'";
-    $conn->query($sql);
-}
-
-// get info from database
-$sql = "SELECT * FROM Projecten WHERE ProjectNaam = '$projectNaam'";
-
-$result = $conn->query($sql);
-
-//make for every item a input field and a form to edit
+// display forms for editing project details
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<form method='post'>";
-        echo "<input type='hidden' name='projectnaam' value='" . $row["ProjectNaam"] . "'>";
+
+        // form for project name
         echo "<div class='form-group'>";
         echo "<label for='projectnaam'>Project Naam:</label>";
         echo "<input type='text' class='form-control' id='projectnaam' name='projectnaam' value='" . $row["ProjectNaam"] . "' required>";
-        echo "<button type='submit' name='naam' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
-        echo "</form>";
-        //form for project beschrijving
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='projectbeschrijving' value='" . $row["ProjectBeschrijving"] . "'>";
+
+        // form for project description
         echo "<div class='form-group'>";
         echo "<label for='projectbeschrijving'>Project Beschrijving:</label>";
         echo "<textarea class='form-control' id='projectbeschrijving' name='projectbeschrijving' rows='3' required>" . $row["ProjectBeschrijving"] . "</textarea>";
-        echo "<button type='submit' name='beschrijving' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
-        echo "</form>";
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='projectbeschrijving' value='" . $row["ProjectBeschrijving"] . "'>";
+
+        // form for watwil
         echo "<div class='form-group'>";
-        echo "<label for='projectbeschrijving'>Wat willen de project gevers:</label>";
-        echo "<textarea class='form-control' id='projectbeschrijving' name='watwil' rows='3' required>" . $row["watwil"] . "</textarea>";
-        echo "<button type='submit' name='watwil' class='btn btn-primary mt-3'>Opslaan</button>";
+        echo "<label for='watwil'>Wat willen de projectgevers:</label>";
+        echo "<textarea class='form-control' id='watwil' name='watwil' rows='3' required>" . $row["watwil"] . "</textarea>";
         echo "</div>";
-        echo "</form>";
-        //form for html
-        // button ot turn html to bull
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='html' value='" . $row["HTML"] . "'>";
+
+        // form for HTML
         echo "<div class='form-group'>";
         echo "<label for='html'>HTML:</label>";
-        echo "<button type='submit' name='htmlbull' class='btn btn-primary mt-3'>BULL</button>";
+        echo "<select class='form-control' id='html' name='html'>";
+        echo "<option value='BULL' " . ($row["HTML"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
+        echo "<option value='BEAR' " . ($row["HTML"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "</select>";
         echo "</div>";
-        echo "</form>";
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='html' value='" . $row["HTML"] . "'>";
-        echo "<div class='form-group'>";
-        echo "<label for='html'>HTML:</label>";
-        echo "<button type='submit' name='htmlbear' class='btn btn-primary mt-3'>BEAR</button>";
-        echo "</div>";
-        echo "</form>";
-        //form for css
-        // button ot turn css to bull
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='css' value='" . $row["CSS"] . "'>";
+
+        // form for CSS
         echo "<div class='form-group'>";
         echo "<label for='css'>CSS:</label>";
-        echo "<button type='submit' name='cssbull' class='btn btn-primary mt-3'>BULL</button>";
+        echo "<select class='form-control' id='css' name='css'>";
+        echo "<option value='BULL' " . ($row["CSS"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
+        echo "<option value='BEAR' " . ($row["CSS"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "</select>";
         echo "</div>";
-        echo "</form>";
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='css' value='" . $row["CSS"] . "'>";
-        echo "<div class='form-group'>";
-        echo "<label for='css'>CSS:</label>";
-        echo "<button type='submit' name='cssbear' class='btn btn-primary mt-3'>BEAR</button>";
-        echo "</div>";
-        echo "</form>";
-        //form for js
-        // button ot turn js to bull
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='js' value='" . $row["JS"] . "'>";
+
+        // form for JS
         echo "<div class='form-group'>";
         echo "<label for='js'>JS:</label>";
-        echo "<button type='submit' name='jsbull' class='btn btn-primary mt-3'>BULL</button>";
+        echo "<select class='form-control' id='js' name='js'>";
+        echo "<option value='BULL' " . ($row["JS"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
+        echo "<option value='BEAR' " . ($row["JS"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "</select>";
         echo "</div>";
-        echo "</form>";
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='js' value='" . $row["JS"] . "'>";
-        echo "<div class='form-group'>";
-        echo "<label for='js'>JS:</label>";
-        echo "<button type='submit' name='jsbear' class='btn btn-primary mt-3'>BEAR</button>";
-        echo "</div>";
-        echo "</form>";
-        //form for php
-        // button ot turn php to bull
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='php' value='" . $row["PHP"] . "'>";
+
+        // form for PHP
         echo "<div class='form-group'>";
         echo "<label for='php'>PHP:</label>";
-    echo "<button type='submit' name='phpbull' class='btn btn-primary mt-3'>BULL</button>";
-    echo "</div>";
-    echo "</form>";
-    echo "<form method='post'>";
-    echo "<input type='hidden' name='php' value='" . $row["PHP"] . "'>";
-    echo "<div class='form-group'>";
-    echo "<label for='php'>PHP:</label>";
-    echo "<button type='submit' name='phpbear' class='btn btn-primary mt-3'>BEAR</button>";
-    echo "</div>";
-    echo "</form>";
-        //form for startdatum
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='startdatum' value='" . $row["Startdatum"] . "'>";
+        echo "<select class='form-control' id='php' name='php'>";
+        echo "<option value='BULL' " . ($row["PHP"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
+        echo "<option value='BEAR' " . ($row["PHP"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "</select>";
+        echo "</div>";
+
+        // form for overige
+        echo "<div class='form-group'>";
+        echo "<label for='overige'>Overige:</label>";
+        echo "<select class='form-control' id='overige' name='overige'>";
+        echo "<option value='BULL' " . ($row["overige"] == 'BULL' ? 'selected' : '') . ">BULL</option>";
+        echo "<option value='BEAR' " . ($row["overige"] == 'BEAR' ? 'selected' : '') . ">BEAR</option>";
+        echo "</select>";
+        echo "</div>";
+
+        // form for startdatum
         echo "<div class='form-group'>";
         echo "<label for='startdatum'>Startdatum:</label>";
         echo "<input type='date' class='form-control' id='startdatum' name='startdatum' value='" . $row["Startdatum"] . "' required>";
-        echo "<button type='submit' name='start' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
-        echo "</form>";
-        //form for einddatum
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='einddatum' value='" . $row["Einddatum"] . "'>";
+
+        // form for einddatum
         echo "<div class='form-group'>";
         echo "<label for='einddatum'>Einddatum:</label>";
         echo "<input type='date' class='form-control' id='einddatum' name='einddatum' value='" . $row["Einddatum"] . "' required>";
-        echo "<button type='submit' name='eind' class='btn btn-primary mt-3'>Opslaan</button>";
         echo "</div>";
-        echo "</form>";
-        //form for status
-        echo "<form method='post'>";
-        echo "<input type='hidden' name='status' value='" . $row["Status"] . "'>";
+
+        // form for status
         echo "<div class='form-group'>";
         echo "<label for='status'>Status:</label>";
-        echo "<input type='text' class='form-control' id='status' name='status' value='" . $row["Status"] . "' required>";
-        echo "<button type='submit' name='status' class='btn btn-primary mt-3'>Opslaan</button>";
+        echo "<select class='form-control' id='status' name='status'>";
+        echo "<option value='In behandeling' " . ($row["Status"] == 'In behandeling' ? 'selected' : '') . ">In behandeling</option>";
+        echo "<option value='Afgerond' " . ($row["Status"] == 'Afgerond' ? 'selected' : '') . ">Afgerond</option>";
+        echo "<option value='Geannuleerd' " . ($row["Status"] == 'Geannuleerd' ? 'selected' : '') . ">Geannuleerd</option>";
+        echo "</select>";
         echo "</div>";
+
+        // submit button
+        echo "<button type='submit' class='btn btn-primary'>Submit</button>";
+
         echo "</form>";
-
-        echo 'html = ' . $row["HTML"];
-        echo 'css = ' . $row["CSS"];
-        echo 'js = ' . $row["JS"];
-        echo 'php = ' . $row["PHP"];
-
-
     }
 } else {
-    echo "0 results";
+    echo "No records found";
 }
+$stmt->close();
 $conn->close();
-    ?>
+?>

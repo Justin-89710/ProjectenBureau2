@@ -110,6 +110,12 @@ if ($result->num_rows > 0) {
             <input type="hidden" name="project" value="<?php echo $projectnaam; ?>">
             <button type="submit" name="submit">Aanmelden</button>
         </form>
+
+        <?php
+        if (isset($_GET['error'])) {
+            echo "<p class='error' style='color: red'>" . $_GET['error'] . "</p>";
+        }
+        ?>
     </div>
 </center>
 </body>

@@ -110,6 +110,21 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
+//get all Aanmeldignen from db
+$sql = "SELECT * FROM Aanmeldingen";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>Naam</th><th>Studentennummer</th><th>Klas</th><th>Email</th><th>Reden</th><th>Project</th></tr>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["Naam"] . "</td><td>" . $row["Studentennummer"] . "</td><td>" . $row["Klas"] . "</td><td>" . $row["Email"] . "</td><td>" . $row["Reden"] . "</td><td>" . $row["Project"] . "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+
 $conn->close();
 ?>
 <a href='projectentoevoegen.php'><button class='btn btn-primary mt-3'>voeg een project toe!</button></a>
