@@ -94,10 +94,8 @@ class Email
     {
         $this->setupMail();
 
-//        $this->mail->addAddress('goldewijk@glr.nl', 'Projecten Bureu');
-//        $this->mail->addAddress('wklomp@glr.nl', 'Projecten Bureu');
-        $this->mail->addAddress('jljnootenboom@gmail.com', 'Projecten Bureu');
-        $this->mail->addAddress('089710@glr.nl', 'Projecten Bureu');
+        $this->mail->addAddress('goldewijk@glr.nl', 'Projecten Bureu');
+        $this->mail->addAddress('wklomp@glr.nl', 'Projecten Bureu');
         $this->mail->Subject = 'Nieuwe aanvraag';
 
         // Set the Body as HTML
